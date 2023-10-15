@@ -21,7 +21,7 @@ const Read = () => {
   //===============================>
   function handleDelete(id) {
     axios
-      .delete(`https://6526eec7917d673fd76d3b44.mockapi.io/crud/$(id)`)
+      .delete(`https://6526eec7917d673fd76d3b44.mockapi.io/crud/${id}`)
       .then(() => {
         getData()
       })
@@ -43,10 +43,20 @@ const Read = () => {
   ////------------------------------------------------->>>>
   return (
     <>
+      {/* Bootstrap Switch Button */}
+      <div className="form-check form-switch">
+        <input className="form-check-input" type="checkbox" role="switch" />
+      </div>
+      {/* //===============================>*/}
       <br />
-      <h2>===READ===</h2>
+      <div className="d-flex justify-content-between m-2">
+        <h2>===READ===</h2>
+        <Link to="/">
+          <button className="btn btn-info">Create</button>
+        </Link>
+      </div>
       <br />
-      <table className="table">
+      <table className="table ">
         <thead>
           <tr>
             <th scope="col">#</th>
