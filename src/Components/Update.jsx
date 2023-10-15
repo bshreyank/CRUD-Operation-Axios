@@ -1,14 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 
 const Update = () => {
   const [id, setId] = useState(0)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
     setId(localStorage.getItem('id'))
@@ -17,13 +17,15 @@ const Update = () => {
   }, [])
 
   const handleUpdate = (e) => {
-    e.preventDefault();
-    axios.put(`https://6526eec7917d673fd76d3b44.mockapi.io/crud/${id}`, {
-      name: name,
-      email: email,
-    }).then(()=>{
-        navigate("/read"); 
-    })
+    e.preventDefault()
+    axios
+      .put(`https://6526eec7917d673fd76d3b44.mockapi.io/crud/${id}`, {
+        name: name,
+        email: email,
+      })
+      .then(() => {
+        navigate('/read')
+      })
   }
 
   //====================================================>>>>
@@ -57,11 +59,14 @@ const Update = () => {
         <br />
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-primary mx-2"
           onClick={handleUpdate}
         >
           Update
         </button>
+        <Link to='/read'>
+          <button className="btn btn-secondary mx-2">Back</button>
+        </Link>
       </form>
     </>
   )
