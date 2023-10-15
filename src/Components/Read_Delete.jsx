@@ -6,6 +6,9 @@ const Read = () => {
   //This is to store data which is in the console
   const [data, setData] = useState([])
 
+  //for dark mode 
+  const [tabledark, setTableDark]=useState('')
+
   function getData() {
     //axios returns promice and then it gets handled by .then()
     axios
@@ -45,7 +48,15 @@ const Read = () => {
     <>
       {/* Bootstrap Switch Button */}
       <div className="form-check form-switch">
-        <input className="form-check-input" type="checkbox" role="switch" />
+        <input className="form-check-input" 
+               type="checkbox" 
+               onClick={()=>{
+                  if(tabledark === 'table-dark'){
+                    setTableDark("")
+                  }else{
+                    setTableDark("table-dark");
+                  }
+               }}/>
       </div>
       {/* //===============================>*/}
       <br />
@@ -56,7 +67,7 @@ const Read = () => {
         </Link>
       </div>
       <br />
-      <table className="table ">
+      <table className={`table ${tabledark}`}>
         <thead>
           <tr>
             <th scope="col">#</th>
