@@ -16,3 +16,6 @@ Database : MockAPI (https://mockapi.io/)
 
 ### UPDATE
 ![image](https://github.com/bshreyank/CRUD-Operation-Axios/assets/66244570/2df59329-eab6-47e9-972d-9cb8a74579fa)
+
+### DELETE (Number 5 and 7 is Deleted)
+![image](https://github.com/bshreyank/CRUD-Operation-Axios/assets/66244570/c59748cd-cb56-43a8-b87d-9d88d72988f4)
